@@ -1,6 +1,7 @@
 import React from 'react';
 // connect component is written lower case
 import { connect} from 'react-redux';
+// put action creator in curly brackets becuase it is a named export
 import {SelectSong} from '../actions';
 
 class SongList extends React.Component {    
