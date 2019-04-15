@@ -1,3 +1,7 @@
+import { combineReducers } from 'redux';
+// curly braces means we are importing a named export from the referenced file
+import {SelectSong} from '../actions';
+
 const SongsReducer = () => {
     return [
         {title: 'No Scrubs' , duration: '4:05'},
@@ -12,6 +16,10 @@ const selectedSongReducer = (selectedSong=null, action) => {
         return action.payload;
     }
     
-    return selectedSong;
-
+    return SelectSong;
 };
+
+export default combineReducers({
+    songs: SongsReducer,
+    selectedSong: selectedSongReducer
+});
